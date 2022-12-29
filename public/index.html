@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Responsive Drop Down Navigation Menu | CodingLab </title>
+    <link rel="stylesheet" href="../src/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="loaded()">
+    <div id="loader">
+        <svg class="ap" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="ap-grad1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="hsl(223,90%,55%)" />
+                    <stop offset="100%" stop-color="hsl(253,90%,55%)" />
+                </linearGradient>
+                <linearGradient id="ap-grad2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="hsl(193,90%,55%)" />
+                    <stop offset="50%" stop-color="hsl(223,90%,55%)" />
+                    <stop offset="100%" stop-color="hsl(253,90%,55%)" />
+                </linearGradient>
+            </defs>
+            <circle class="ap__ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16"
+                stroke-linecap="round" />
+            <circle class="ap__worm1" r="56" cx="64" cy="192" fill="none" stroke="url(#ap-grad1)" stroke-width="16"
+                stroke-linecap="round" stroke-dasharray="87.96 263.89" />
+            <path class="ap__worm2" d="M120,192A56,56,0,0,1,8,192C8,161.07,16,8,64,8S120,161.07,120,192Z" fill="none"
+                stroke="url(#ap-grad2)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 494" />
+        </svg>
+    </div>
+    <div   class="animate-bottom" id="content">
+        <nav>
+            <div class="navbar">
+                <i class='bx bx-menu'></i>
+                <div class="logo"><a href="../public/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: var(--color-2);margin-right:10px;"><path d="M2.76 20.2a2.73 2.73 0 0 0 2.15.85 8.86 8.86 0 0 0 3.37-.86 9 9 0 0 0 12.27-10.9c1.31-2.23 1.75-4.26.67-5.48a2.94 2.94 0 0 0-2.57-1A5 5 0 0 0 16.1 4 9 9 0 0 0 3.58 15.14c-1.06 1.21-2.05 3.68-.82 5.06zm1.5-1.32c-.22-.25 0-1.07.37-1.76a9.26 9.26 0 0 0 1.57 1.74c-1.03.3-1.71.28-1.94.02zm14.51-5.17A7 7 0 0 1 15.58 18 7.12 7.12 0 0 1 12 19a6.44 6.44 0 0 1-1.24-.13 30.73 30.73 0 0 0 4.42-3.29 31.5 31.5 0 0 0 3.8-4 6.88 6.88 0 0 1-.21 2.13zm.09-8.89a.94.94 0 0 1 .87.32c.23.26.16.94-.26 1.93a9.2 9.2 0 0 0-1.61-1.86 2.48 2.48 0 0 1 1-.39zM5.22 10.31A6.94 6.94 0 0 1 8.41 6 7 7 0 0 1 12 5a6.9 6.9 0 0 1 6 3.41 5.19 5.19 0 0 1 .35.66 27.43 27.43 0 0 1-4.49 5A27.35 27.35 0 0 1 8.35 18a7 7 0 0 1-3.13-7.65z"></path></svg>BrookX</a></div>
+                <div class="nav-links">
+                    <div class="sidebar-logo">
+                        <span class="logo-name"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: var(--color-2);margin-right:10px;"><path d="M2.76 20.2a2.73 2.73 0 0 0 2.15.85 8.86 8.86 0 0 0 3.37-.86 9 9 0 0 0 12.27-10.9c1.31-2.23 1.75-4.26.67-5.48a2.94 2.94 0 0 0-2.57-1A5 5 0 0 0 16.1 4 9 9 0 0 0 3.58 15.14c-1.06 1.21-2.05 3.68-.82 5.06zm1.5-1.32c-.22-.25 0-1.07.37-1.76a9.26 9.26 0 0 0 1.57 1.74c-1.03.3-1.71.28-1.94.02zm14.51-5.17A7 7 0 0 1 15.58 18 7.12 7.12 0 0 1 12 19a6.44 6.44 0 0 1-1.24-.13 30.73 30.73 0 0 0 4.42-3.29 31.5 31.5 0 0 0 3.8-4 6.88 6.88 0 0 1-.21 2.13zm.09-8.89a.94.94 0 0 1 .87.32c.23.26.16.94-.26 1.93a9.2 9.2 0 0 0-1.61-1.86 2.48 2.48 0 0 1 1-.39zM5.22 10.31A6.94 6.94 0 0 1 8.41 6 7 7 0 0 1 12 5a6.9 6.9 0 0 1 6 3.41 5.19 5.19 0 0 1 .35.66 27.43 27.43 0 0 1-4.49 5A27.35 27.35 0 0 1 8.35 18a7 7 0 0 1-3.13-7.65z"></path></svg>BrookX</span>
+                        <i class='bx bx-x'></i>
+                    </div>
+                    <ul class="links">
+                        <li><a class="nav-item" href="#">HOME</a></li>
+                        <li>
+                            <a class="nav-item" href="#">HTML & CSS</a>
+                            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                            <ul class="htmlCss-sub-menu sub-menu">
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">Login Forms</a></li>
+                                <li><a href="#">Card Design</a></li>
+                                <li class="more">
+                                    <span><a href="#">More</a>
+                                        <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                                    </span>
+                                    <ul class="more-sub-menu sub-menu">
+                                        <li><a href="#">Neumorphism</a></li>
+                                        <li><a href="#">Pre-loader</a></li>
+                                        <li><a href="#">Glassmorphism</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="#">JAVASCRIPT</a>
+                            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                            <ul class="js-sub-menu sub-menu">
+                                <li><a href="#">Dynamic Clock</a></li>
+                                <li><a href="#">Form Validation</a></li>
+                                <li><a href="#">Card Slider</a></li>
+                                <li><a href="#">Complete Website</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="nav-item" href="#">ABOUT US</a></li>
+                        <li><a class="nav-item" href="#">CONTACT US</a></li>
+                    </ul>
+                </div>
+                <label class="switch">
+                    <input id="ChangeTheme" onclick="toggleDark()" type="checkbox">
+                    <span class="slider"></span>
+                </label>
+    
+                <div class="search-box">
+                    <i class='bx bx-search'></i>
+                    <div class="input-box">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Welcome to
+                <strong>B</strong><strong>r</strong><strong>o</strong><strong>o</strong><strong>k</strong><strong>X</strong><br>
+            </h1>
+            <h3>Unlock your best work with Tome's AI-powered storytelling format.</h3>
+            <button class="hero-btn"> Explore</button>
+        </div>
+        <main>
+            <div class="intro-video">
+                <video playsinline autoplay muted loop poster="">
+                    <source src="../assets/video.webm" type="video/webm">
+                    <source src="../assets/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../src/script.js"></script>
+
+</body>
+
+</html>
