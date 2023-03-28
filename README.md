@@ -1,28 +1,31 @@
-# React Example - Product Compare Page :tada: :fireworks:
+### To intsall all rhe required dependecies
 
-Product comparison page build using **React** + **Redux** + **Bootstrap** + **SASS**
+```
+npm install
+```
 
-![Screenshot](https://s8.postimg.cc/fdfsvumkl/Screen_Shot_2018-07-05_at_16.36.17.png)
+## Start the project
 
-It's build on top of [`create-react-app`](http://www.google.lt)
+```
+npm start
+```
 
-Usage
--
-Documentation how to *run*, *build* and *test* app
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-> https://github.com/facebookincubator/create-react-app#npm-start-or-yarn-start
+### Test the application
 
-Demo
--
-> http://react-compare-app.surge.sh
+```
+npm test
+```
 
-Contributing
--
-Thank you for considering contributing!
-Please use GitHub issues and Pull Requests for Contributing.
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-License
--
-The MIT License (MIT). Please see License File for more information.
+### Build application
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/Rhymond/product-compare-react)
+```
+npm run build
+```
+
+Builds the app for production to the `build` folder.<br>
